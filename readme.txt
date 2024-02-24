@@ -1,0 +1,1 @@
+#if you have issues setting up the envirnment, go to myenv/scripts/ and run activate.ps1 
