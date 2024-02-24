@@ -160,6 +160,7 @@ def main():
         st.video(uploaded_file)
         prompt = st.text_area(
             "Prompt", value="These are still images of my golf swing. I want you to imagine that you are a golf pro watching me swing my club. give me personalized tips based on what you have seen in the stills. do not tell me you cannot give real time analysis or voiceover, just look at the stills and give some tips")
+        # prompt ="These are still images of my golf swing. I want you to imagine that you are a golf pro watching me swing my club. give me personalized tips based on what you have seen in the stills. do not tell me you cannot give real time analysis or voiceover, just look at the stills and give some tips"
 
     if st.button('Generate', type="primary") and uploaded_file is not None:
         with st.spinner('Processing...'):
@@ -171,7 +172,7 @@ def main():
 
             # st.write(final_prompt)
             text = frames_to_story(base64Frames, final_prompt)
-            # st.write(text)
+            st.write(text)
 
             # Generate audio from text
             audio_filename, audio_bytes_io = text_to_audio(text)
